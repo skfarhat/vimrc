@@ -45,7 +45,6 @@ NeoBundle 'justinmk/vim-syntax-extra'           " c-improved syntax
 NeoBundle 'jiangmiao/auto-pairs'                " auto-match parenthesis
 NeoBundle 'mbbill/undotree'
 NeoBundle 'mileszs/ack.vim'                     " for grepping
-NeoBundle 'xolox/vim-misc'                      " needed by vim-notes
 NeoBundle 'haya14busa/incsearch.vim'            " better incremental search
 NeoBundle 'haya14busa/incsearch-easymotion.vim' " intergration of inc search with vim-easymotion
 NeoBundle 'matze/vim-move'                      " move lines up and down <A-j> <A-k>
