@@ -178,9 +178,6 @@ nmap <C-d> <C-[>diw
 
 nmap :a :A
 
-" easier to drop the shift
-nmap ; :
-
 nnoremap <leader>t :CtrlPTag<CR>
 
 nmap <F8> :TagbarToggle<CR>
@@ -243,6 +240,9 @@ let g:ctrlp_prompt_mappings = {
       \     'AcceptSelection("e")': ['<c-t>'],
       \     'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
       \ }
+"------------------------------------------------------------
+" cscope
+set cscoperelative
 "------------------------------------------------------------
 " Vim-flake
 " Note: configuration for flake8 is system specific with a config file in 
