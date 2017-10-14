@@ -12,8 +12,10 @@ endif
 if &compatible
   set nocompatible               " Be iMproved
 endif
-set runtimepath+=/home/sfarhat/.vim/bundle/neobundle.vim/
-call neobundle#begin(expand('/home/sfarhat/.vim/bundle'))
+
+set runtimepath+=~/.vim/bundle/neobundle.vim/
+
+call neobundle#begin(expand('~/.vim/bundle/neobundle.vim/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 "------------------------------------------------------------------------------ 
 " General 
