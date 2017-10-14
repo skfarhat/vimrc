@@ -95,7 +95,6 @@ set showmatch     " highlight matching ({[]})            "
 set showcmd       " shows commands written
 set number        " show line numbers
 set incsearch     " start searching as you're typing
-"set cindent       " c-indentation standard
 set ignorecase    " make search case insensitive
 set exrc          " allow per project configuration
 
@@ -168,17 +167,10 @@ command! -nargs=* CreateCppClass :call CppClass(<q-args>)
 " 5-Key-Mapping{{{
 
 let mapleader = " "
-
-" jk is escape
 inoremap jk <esc>
-
-" press // on the visually selected text to search for its next occurence
-vnoremap // y/<C-R>"<CR> 
 
 imap <C-d> <C-[>diwi
 nmap <C-d> <C-[>diw
-
-nmap :a :A
 
 nnoremap <leader>t :CtrlPTag<CR>
 
@@ -194,7 +186,6 @@ nmap <leader>b <Plug>(easymotion-b)
 nmap <leader>e <Plug>(easymotion-e)
 nmap <leader>j <Plug>(easymotion-j)
 nmap <leader>k <Plug>(easymotion-k)
-
 
 " to change colorschemes
 nnoremap <F10> :call NextColor(-1)<CR>
@@ -233,9 +224,8 @@ let g:move_key_modifier = 'C'
 "------------------------------------------------------------
 " CtrlP
 
-set wildignore+=*/build*/*,*/.git/*,*/trash/*,*/xcode*/*,*/docs/*,*/doxygen/*,*/bin/*,*/node_modules/*,*.o
+set wildignore+=*/build*/*,*/.git/*,*/trash/*,*/xcode*/*,*/docs/*,*/doxygen/*,*/bin/*,*/node_modules/*,*.o,*.pyc
 let g:ctrlp_follow_symlinks = 1
-" 'rw' " this is generally good for projects with (.git .hg ...) 
 let g:ctrlp_working_path_mode = 'aw'
 " default should be to open in new tab
 let g:ctrlp_prompt_mappings = {
@@ -304,23 +294,6 @@ autocmd BufWrite *.c,*.cpp,*.hpp,*.h,*.py,*.java,*.sh,*.txt,*.js call TrimWhites
 " in this case, this file's first two and last two lines will be checked 
 set modelines=2
 set secure "prevent unsafe commands in local vimrc
-
-" ------------------------------------------------------------------------------
-" Notes: 
-"
-"
-" filetype plugin indent on
-" Notes
-" to override some of the mappings introduced by some plugins, directories
-" with the path ~/.vim/after/plugin/the_plugin_name_here.vim, should be
-" created.
-
-" Tips
-" select a word in visual mode: vaw
-
-" Last 2 lines:
-" last line is processed by vim and it must be at the end of the file it is worth mentioning 
-" that a space in between '"' and 'vim' is needed in the below line.
 " ------------------------------------------------------------------------------
 " vim:syntax=vim
 " vim:foldmethod=marker:foldlevel=0
