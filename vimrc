@@ -90,21 +90,23 @@ NeoBundleCheck
 " }}}
 " 2-General {{{
 
-set wildmenu      " visual autocomplete for command menu
-set showmatch     " highlight matching ({[]})            "
-set showcmd       " shows commands written
-set number        " show line numbers
-set incsearch     " start searching as you're typing
-set ignorecase    " make search case insensitive
-set exrc          " allow per project configuration
+set wildmenu       " visual autocomplete for command menu
+set showmatch      " highlight matching ({[]})            "
+set showcmd        " shows commands written
+set number         " show line numbers
+set incsearch      " start searching as you're typing
+set ignorecase     " make search case insensitive
+set exrc           " allow per project configuration
+set cscoperelative " remember to open the quickfix window to see the results :copen
 
 " Spaces and Indents
 syntax enable
-set tabstop=2     " number of visual spaces per TAB
-set softtabstop=2 " number of spaces in tab when editing
+set tabstop=2      " number of visual spaces per TAB
+set softtabstop=2  " number of spaces in tab when editing
 set shiftwidth=2
-set expandtab     " tabs are spaces
-set cursorline    " highlight current line
+set expandtab      " tabs are spaces
+set cursorline     " highlight current line
+
 
 colorscheme hybrid
 set background=dark
@@ -230,11 +232,6 @@ let g:ctrlp_prompt_mappings = {
       \ }
 " cscope
 "------------------------------------------------------------
-
-set cscoperelative
-" Remember to open the quickfix window to see the results :copen
-"
-"------------------------------------------------------------
 " Vim-flake
 " Note: configuration for flake8 is system specific with a config file in 
 " ~/.config/flake8
@@ -267,13 +264,6 @@ let g:ycm_add_preview_to_completeopt = 1                " ycm will add the funct
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_confirm_extra_conf=0                          " don't look for .ycm-extra-conf
-"------------------------------------------------------------
-" UltiSnip
-
-let g:UltiSnipsExpandTrigger="<leader><tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsEditSplit="vertical"
 "------------------------------------------------------------
 " JSHint2 
 
