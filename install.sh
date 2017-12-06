@@ -9,3 +9,5 @@ $me/scripts/install-neobundle.sh
 pushd ~
 ln -s $me/vimrc .vimrc
 popd
+
+echo "dependencies: ack, cscope, ctags"

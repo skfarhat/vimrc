@@ -43,8 +43,6 @@ NeoBundle 'haya14busa/incsearch.vim'            " better incremental search
 NeoBundle 'haya14busa/incsearch-easymotion.vim' " intergration of inc search with vim-easymotion
 NeoBundle 'matze/vim-move'                      " move lines up and down <A-j> <A-k>
 NeoBundle 'godlygeek/tabular'
-NeoBundle 'honza/vim-snippets'
-NeoBundle 'SirVer/ultisnips'
 NeoBundle 'brookhong/cscope.vim'
 NeoBundle 'skfarhat/cscope_maps'
 "------------------------------------------------------------------------------ 
@@ -70,6 +68,8 @@ NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 
 " Last disabled
 " -------------
+" NeoBundle 'honza/vim-snippets'
+" NeoBundle 'SirVer/ultisnips'
 " NeoBundle 'lervag/vimtex'                       " Tex support
 " NeoBundle 'Shougo/neosnippet.vim'
 " NeoBundle 'Shougo/neosnippet-snippets'
@@ -177,6 +177,7 @@ nnoremap <leader>t :CtrlPTag<CR>
 nmap <F8> :TagbarToggle<CR>
 nmap <leader>ga Git "For GitGutter
 nmap <leader>^ <C-^>
+nmap <leader>ff :Ack 
 
 " EasyMotion
 " disable default mappings
@@ -186,11 +187,6 @@ nmap <leader>b <Plug>(easymotion-b)
 nmap <leader>e <Plug>(easymotion-e)
 nmap <leader>j <Plug>(easymotion-j)
 nmap <leader>k <Plug>(easymotion-k)
-
-" to change colorschemes
-nnoremap <F10> :call NextColor(-1)<CR>
-nnoremap <F11> :call NextColor(0)<CR>
-nnoremap <F12> :call NextColor(1)<CR>
 
 " Tabularize
 nmap <leader>a= :Tabularize /=<CR>
@@ -232,9 +228,12 @@ let g:ctrlp_prompt_mappings = {
       \     'AcceptSelection("e")': ['<c-t>'],
       \     'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
       \ }
-"------------------------------------------------------------
 " cscope
+"------------------------------------------------------------
+
 set cscoperelative
+" Remember to open the quickfix window to see the results :copen
+"
 "------------------------------------------------------------
 " Vim-flake
 " Note: configuration for flake8 is system specific with a config file in 
