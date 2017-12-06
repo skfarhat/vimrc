@@ -231,7 +231,7 @@ let g:move_key_modifier = 'C'
 "------------------------------------------------------------
 " CtrlP
 
-set wildignore+=*/build*/*,*/.git/*,*/trash/*,*/xcode*/*,*/docs/*,*/doxygen/*,*/bin/*,*/node_modules/*,*.o
+set wildignore+=*/build*/*,*/.git/*,*/trash/*,*/xcode*/*,*/docs/*,*/doxygen/*,*/bin/*,*/node_modules/*,*.o,*.pyc
 let g:ctrlp_follow_symlinks = 1
 " 'rw' " this is generally good for projects with (.git .hg ...) 
 let g:ctrlp_working_path_mode = 'aw'
@@ -294,7 +294,7 @@ let jshint2_save = 1
 autocmd BufNewFile *.hpp,*.h HeaderguardAdd
 
 " clear trailing whitespace from source files
-autocmd BufWrite *.c,*.cpp,*.hpp,*.h,*.py,*.java,*.sh,*.txt,*.js call TrimWhitespace()
+"autocmd BufWrite *.c,*.cpp,*.hpp,*.h,*.py,*.java,*.sh,*.txt,*.js call TrimWhitespace()
 
 " }}}
 
