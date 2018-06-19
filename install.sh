@@ -10,4 +10,5 @@ pushd ~
 ln -s $me/vimrc .vimrc
 popd
 
-echo "dependencies: ack, cscope, ctags"
+echo "Please install dependencies: "
+echo "ack, cscope, ctags"
