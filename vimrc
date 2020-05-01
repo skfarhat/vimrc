@@ -8,86 +8,78 @@ if v:version < 703
 endif
 
 " 1-Plugins {{{
-"NeoBundle Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
 endif
 
-set runtimepath+=~/.vim/bundle/neobundle.vim/
 
-call neobundle#begin(expand('~/.vim/bundle/neobundle.vim/'))
-NeoBundleFetch 'Shougo/neobundle.vim'
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+
 "------------------------------------------------------------------------------
 " General
 
-NeoBundle 'easymotion/vim-easymotion'
-NeoBundle 'tpope/vim-fugitive'                  " git plugin
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-repeat'
-NeoBundle 'airblade/vim-gitgutter'              " git-diff on the left-bar
-NeoBundle 'tpope/vim-vinegar'
-NeoBundle 'scrooloose/nerdcommenter'            " commenting
-NeoBundle 'ctrlpvim/ctrlp.vim'                  " fuzzy search
-NeoBundle 'bling/vim-airline'                   " cool status bar at the bottom
-NeoBundle 'vim-airline/vim-airline-themes'
-NeoBundle 'majutsushi/tagbar'                   " outline of the classes, functions (uses ctags)
-NeoBundle 'skfarhat/Tabmerge'                   " merge a tab to split
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'Xuyuanp/nerdtree-git-plugin'         " show git status in NERDTree
+Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-fugitive'                  " git plugin
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'airblade/vim-gitgutter'              " git-diff on the left-bar
 
-NeoBundle 'nacitar/a.vim'                       " switch between .h/.c files
-NeoBundle 'drmikehenry/vim-headerguard'         " adds header guard to hpp
-NeoBundle 'justinmk/vim-syntax-extra'           " c-improved syntax
-NeoBundle 'jiangmiao/auto-pairs'                " auto-match parenthesis
-NeoBundle 'mbbill/undotree'
-NeoBundle 'mileszs/ack.vim'                     " for grepping
-NeoBundle 'haya14busa/incsearch.vim'            " better incremental search
-NeoBundle 'haya14busa/incsearch-easymotion.vim' " intergration of inc search with vim-easymotion
-NeoBundle 'matze/vim-move'                      " move lines up and down <A-j> <A-k>
-NeoBundle 'godlygeek/tabular'
-NeoBundle 'brookhong/cscope.vim'
-NeoBundle 'skfarhat/cscope_maps'
-NeoBundle 'vim-scripts/CCTree'
-"------------------------------------------------------------------------------
-" Syntaxes
+Plug 'scrooloose/nerdcommenter'            " commenting
+Plug 'ctrlpvim/ctrlp.vim'                  " fuzzy search
+Plug 'bling/vim-airline'                   " cool status bar at the bottom
+Plug 'vim-airline/vim-airline-themes'
+Plug 'majutsushi/tagbar'                   " outline of the classes, functions (uses ctags)
+Plug 'skfarhat/Tabmerge'                   " merge a tab to split
+Plug 'jiangmiao/auto-pairs'                " auto-match parenthesis
+Plug 'mileszs/ack.vim'                     " for grepping
 
-NeoBundle 'Valloric/YouCompleteMe'  " C/C++ autocomplete
-NeoBundle 'rdnetto/YCM-Generator'   " automatically generates ycm related flags
-NeoBundle 'plasticboy/vim-markdown' " Markdown syntax
-NeoBundle 'jansenm/vim-cmake'       " Cmake syntax
-NeoBundle 'pangloss/vim-javascript' " javascript
-NeoBundle 'Shutnik/jshint2.vim'
-NeoBundle 'vim-scripts/matchit.zip'
-NeoBundle 'tomlion/vim-solidity'
+
+" DISABLED "
+
+" Plug 'mbbill/undotree'
+" Plug 'haya14busa/incsearch.vim'            " better incremental search
+" Plug 'haya14busa/incsearch-easymotion.vim' " intergration of inc search with vim-easymotion
+" Plug 'matze/vim-move'                      " move lines up and down <A-j> <A-k>
+" Plug 'godlygeek/tabular'
+" Plug 'nacitar/a.vim'                       " switch between .h/.c files
+" Plug 'drmikehenry/vim-headerguard'         " adds header guard to hpp
+" Plug 'justinmk/vim-syntax-extra'           " c-improved syntax
+" Plug 'tpope/vim-vinegar'
+" Plug 'brookhong/cscope.vim'
+" Plug 'skfarhat/cscope_maps'
 
 "------------------------------------------------------------------------------
 " Themes
 
-NeoBundle 'dracula/vim'
-NeoBundle 'flazz/vim-colorschemes'
-NeoBundle 'chriskempson/base16-vim'
+Plug 'morhetz/gruvbox'
+Plug 'dracula/vim'
+Plug 'flazz/vim-colorschemes'
+Plug 'chriskempson/base16-vim'
 
 " You can specify revision/branch/tag.
-NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
+" Plug 'Shougo/vimshell', { 'rev' : '3787e5' }
 
 " Last disabled
 " -------------
-" NeoBundle 'honza/vim-snippets'
-" NeoBundle 'SirVer/ultisnips'
-" NeoBundle 'lervag/vimtex'                       " Tex support
-" NeoBundle 'Shougo/neosnippet.vim'
-" NeoBundle 'Shougo/neosnippet-snippets'
+" Plug 'honza/vim-snippets'
+" Plug 'SirVer/ultisnips'
+" Plug 'lervag/vimtex'                       " Tex support
+" Plug 'Shougo/neosnippet.vim'
+" Plug 'Shougo/neosnippet-snippets'
+" Plug 'scrooloose/nerdtree'                 " sidebar
+" Plug 'Xuyuanp/nerdtree-git-plugin'         " show git status in NERDTree
 
-" Required:
-call neobundle#end()
 
-" Required:
+" Initialize plugin system
+call plug#end()
+
 filetype plugin indent on
+syntax enable
 
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
-"End NeoBundle Scripts-------------------------
+" -----------------------------------------------------------------------------
 
 " }}}
 " 2-General {{{
@@ -103,14 +95,14 @@ set cscoperelative " remember to open the quickfix window to see the results :co
 
 " Spaces and Indents
 syntax enable
-set tabstop=4      " number of visual spaces per TAB
+set tabstop=2      " number of visual spaces per TAB
 set softtabstop=2  " number of spaces in tab when editing
 set shiftwidth=2
 set expandtab      " tabs are spaces
 set cursorline     " highlight current line
 
 
-colorscheme hybrid
+colorscheme monokai
 set background=dark
 
 
@@ -201,21 +193,14 @@ nmap <leader>a" :Tabularize /"<CR>
 vmap <leader>a" :Tabularize /"<CR>
 
 " YouCompleteMe
-"nnoremap <leader>g :YcmCompleter
+nnoremap <leader>g :YcmCompleter
 " makes fixes to the code
-"nnoremap <leader>gf :YcmCompleter FixIt <CR>
+nnoremap <leader>gf :YcmCompleter FixIt <CR>
 " go to where that thing under the cursor is
-"nnoremap <leader>gg :YcmCompleter GoTo <CR>
+nnoremap <leader>gg :YcmCompleter GoTo <CR>
 
 " }}}
 " 6-Plugin Options {{{
-
-
-"------------------------------------------------------------
-" Ack
-if executable('ag')
-    let g:ackprg = 'ag --vimgrep'
-  endif
 
 "------------------------------------------------------------
 " vim-airline
@@ -235,16 +220,10 @@ set wildignore+=*/build*/*,*/.git/*,*/trash/*,*/xcode*/*,*/docs/*,*/doxygen/*,*/
 let g:ctrlp_follow_symlinks = 1
 let g:ctrlp_working_path_mode = 'aw'
 " default should be to open in new tab
-"let g:ctrlp_prompt_mappings = {
-      "\     'AcceptSelection("e")': ['<c-t>'],
-      "\     'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
-      "\ }
-
-" the below makes it significantly faster
-let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
-if executable('ag')
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-endif
+let g:ctrlp_prompt_mappings = {
+      \     'AcceptSelection("e")': ['<c-t>'],
+      \     'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+      \ }
 " cscope
 "------------------------------------------------------------
 " Vim-flake
@@ -267,11 +246,6 @@ let g:Tabmerge_default_window_location= 'right' " acceptable values top|bottom|r
 
 let g:tagbar_sort = 0
 "------------------------------------------------------------
-" NERDCommenter
-
-let g:NERDAltDelims_c = 1
-let g:NERDSpaceDelims = 1
-"------------------------------------------------------------
 " Vim-tex
 
 " TODO: overrides the use of <F5> when in a .tex file
@@ -280,31 +254,22 @@ let g:NERDSpaceDelims = 1
 " YouCompleteMe
 
 "let g:loaded_youcompleteme = 1
-"let g:ycm_add_preview_to_completeopt = 1                " ycm will add the function documentation in the list
-"let g:ycm_autoclose_preview_window_after_insertion = 1
-"let g:ycm_autoclose_preview_window_after_completion = 1
-"let g:ycm_confirm_extra_conf=0                          " don't look for .ycm-extra-conf
+let g:ycm_add_preview_to_completeopt = 1                " ycm will add the function documentation in the list
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_confirm_extra_conf=0                          " don't look for .ycm-extra-conf
 "------------------------------------------------------------
 " JSHint2
 
 let jshint2_save = 1
 "------------------------------------------------------------
-" NERDTree 
-
-" How can I open NERDTree automatically when vim starts up on opening a directory?
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
-
-" How can I close vim if the only window left open is a NERDTree?
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-map <F5> :NERDTreeToggle<CR>
 
 " For vim-headerguard to generate a header guard on creation of *.hpp or *.h
 " files
 autocmd BufNewFile *.hpp,*.h HeaderguardAdd
 
 " clear trailing whitespace from source files
-autocmd BufWrite *.py,*.java,*.sh,*.txt,*.js call TrimWhitespace()
+"autocmd BufWrite *.c,*.cpp,*.hpp,*.h,*.py,*.java,*.sh,*.txt,*.js call TrimWhitespace()
 
 " }}}
 
